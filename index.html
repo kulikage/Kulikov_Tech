@@ -1,98 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nikolai Kulikov – Engineer & Innovator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #222;
-    }
-    header {
-      background: #111;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    nav {
-      background: #333;
-      padding: 0.5rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 4rem;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikolai Kulikov — Engineer • Inventor • Visionary</title>
+  <meta name="description" content="Personal site of Nikolai Kulikov — engineer & deep-tech innovator. TorrideX, SkyForge, SynthoShield."/>
+  <meta property="og:title" content="Nikolai Kulikov — Engineer • Inventor • Visionary">
+  <meta property="og:description" content="Engineer & deep-tech innovator. TorrideX • SkyForge • SynthoShield">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/preview.png">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <header>
-    <h1>Nikolai Kulikov</h1>
-    <p>Engineer • Inventor • DeepTech Pioneer</p>
-    <p><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech" style="color:#87ceeb">nikolai@kulikov.tech</a></p>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img class="brand-mark" src="assets/logo.svg" alt="K logo">
+      <span class="brand-name">Kulikov Tech</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="siteNav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#media">Recognition</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- HERO -->
+  <section class="hero" id="home" aria-label="Intro">
+    <!-- decorative background collage -->
+    <div class="collage">
+      <!-- replace images in assets/shot*.jpg to your screenshots; keep structure -->
+      <img src="assets/shot1.jpg" alt="" class="tile t1">
+      <img src="assets/shot2.jpg" alt="" class="tile t2">
+      <img src="assets/shot3.jpg" alt="" class="tile t3">
+      <img src="assets/shot4.jpg" alt="" class="tile t4">
+      <img src="assets/shot5.jpg" alt="" class="tile t5">
+      <img src="assets/shot6.jpg" alt="" class="tile t6">
+    </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a mechanical engineer and deep tech entrepreneur with over 10 years of experience. I specialize in high-tech development in the fields of plasma energy, ozone layer restoration, and advanced composite materials. Previously involved in Russia’s strategic defense programs, I am now focused on clean technology and innovation in the United States.</p>
+    <!-- content -->
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Nikolai Kulikov</h1>
+        <p class="tagline">Engineer • Inventor • Visionary</p>
+        <a class="hero-cta" href="#projects">Explore projects</a>
+      </div>
+
+      <!-- portrait; replace assets/photo.jpg if нужно -->
+      <div class="hero-portrait">
+        <div class="portrait-frame">
+          <img src="assets/photo.jpg" alt="Nikolai Kulikov portrait" onerror="this.style.display='none'">
+          <!-- fallback: embossed logo if photo not provided -->
+          <div class="portrait-fallback">
+            <img src="assets/logo.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- overlay CTA card like on the screenshot -->
+    <div class="cta-overlay" role="region" aria-label="Quick contact">
+      <div class="cta-left">
+        <strong>Напишите нам</strong>
+        <span class="muted">Хочу сайт/оценку/сотрудничество — опишите кратко запрос</span>
+      </div>
+      <form class="cta-form" id="ctaForm">
+        <input type="text" id="ctaMsg" placeholder="Коротко опишите запрос…" aria-label="Message">
+        <button type="submit" class="cta-btn">Get in touch</button>
+      </form>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Key Projects</h2>
-    <h3>TorrideX</h3>
-    <p>A next-generation plasma generator using radioisotope ionization to produce clean electricity in compact form. Currently in TRL 4–5 with ongoing investor outreach.</p>
-
-    <h3>SkyForge</h3>
-    <p>A system for restoring the ozone layer by generating ozone directly in the lower stratosphere using aircraft-mounted generators. FAA certification roadmap in progress.</p>
-
-    <h3>SynthoShield</h3>
-    <p>Advanced composite armor solutions combining SiC granules, epoxy matrix, and multilayer structures to improve ballistic protection with lightweight form factors.</p>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Accomplished engineering specialist with over a decade of experience in innovative design, advanced manufacturing,
+        and complex engineering solutions. Focused on deep-tech innovation in plasma energy, ozone-layer restoration,
+        and composite materials. Hello Tomorrow <em>Deep Tech Pioneer</em>. Prior defense projects experience; now building
+        clean-tech solutions in the U.S.
+      </p>
+    </div>
   </section>
 
-  <section id="media">
-    <h2>Recognition & Media</h2>
-    <ul>
-      <li>Hello Tomorrow – Deep Tech Pioneer (2025)</li>
-      <li>Featured in CEOWorld Magazine and TechBullion</li>
-      <li>Selected for MIT 100K, NBAA-BACE, DIANA NATO, ARPA-E SPARKS</li>
-    </ul>
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2>Key Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>TorrideX</h3>
+          <p>Next-generation plasma generator using radioisotope ionization to produce clean electricity in compact form. Current status: TRL 4–5; fundraising in progress.</p>
+          <div class="pill">Energy</div>
+        </article>
+        <article class="card">
+          <h3>SkyForge</h3>
+          <p>Ozone-layer restoration via aircraft-mounted ozone generators operating in the lower stratosphere. FAA certification roadmap in progress.</p>
+          <div class="pill">Aerospace</div>
+        </article>
+        <article class="card">
+          <h3>SynthoShield</h3>
+          <p>Advanced composite armor with SiC granules and multilayer reinforcement to improve ballistic protection while minimizing weight.</p>
+          <div class="pill">Materials</div>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/kulikage" target="_blank">linkedin.com/in/kulikage</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/kulikage.parts" target="_blank">@kulikage.parts</a></p>
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kulikage" target="_blank" rel="noopener">linkedin.com/in/kulikage</a></li>
+        <li><strong>Instagram:</strong> <a href="https://instagram.com/kulikage.parts" target="_blank" rel="noopener">@kulikage.parts</a></li>
+      </ul>
+      <a class="btn" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank">Download CV (PDF)</a>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Nikolai Kulikov • kulikov.tech
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="y"></span> Nikolai Kulikov</span>
+      <span class="sep">•</span>
+      <span>kulikov.tech</span>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
