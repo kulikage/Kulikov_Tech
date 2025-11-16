@@ -18,3 +18,12 @@ if (btn){
     set(next); localStorage.setItem(key,next);
   });
 }
+
+// показать fallback только если фото не загрузилось
+const pf = document.querySelector('.portrait-frame');
+const img = pf ? pf.querySelector('img') : null;
+if (img && pf){
+  const showFallback = ()=> pf.classList.add('noimg');
+  img.addEventListener('error', showFallback);
+  if (!img.complete || img.naturalWidth === 0) showFallback();
+}
