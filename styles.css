@@ -131,7 +131,7 @@ p{line-height:1.7; color:#dfe7f6}
 .chips{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0 0 16px}
 .chips li{
   padding:8px 12px; border-radius:999px;
-  background:rgba(59,130,246,.15); color:#b8d5ff;
+  background:rgba(59,130,246,.15); color:#1f3a6d;
   border:1px solid rgba(59,130,246,.35); font-weight:700; font-size:12px
 }
 
