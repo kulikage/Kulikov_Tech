@@ -3,114 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nikolai Kulikov — Engineer • Inventor • Visionary</title>
-  <meta name="description" content="Personal site of Nikolai Kulikov — engineer & deep-tech innovator. TorrideX, SkyForge, SynthoShield."/>
-  <meta property="og:title" content="Nikolai Kulikov — Engineer • Inventor • Visionary">
-  <meta property="og:description" content="Engineer & deep-tech innovator. TorrideX • SkyForge • SynthoShield">
+  <title>Nikolai Kulikov — Deep‑Tech Engineer & Inventor</title>
+  <meta name="description" content="Deep‑tech engineer building plasma-based power systems, aircraft ozone generators, and advanced composite armor. Hello Tomorrow Deep Tech Pioneer."/>
+  <meta name="theme-color" content="#0e131b"/>
+  <meta property="og:title" content="Nikolai Kulikov — Deep‑Tech Engineer & Inventor">
+  <meta property="og:description" content="Plasma energy • Ozone restoration • Advanced composites. From concept → prototype → certification.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/preview.png">
+  <meta property="og:url" content="https://kulikov.tech">
   <link rel="icon" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nikolai Kulikov",
+    "jobTitle": "Deep-Tech Engineer & Inventor",
+    "url": "https://kulikov.tech",
+    "email": "mailto:nikolai@kulikov.tech",
+    "image": "https://kulikov.tech/assets/photo.jpg",
+    "sameAs": ["https://www.linkedin.com/in/kulikage","https://instagram.com/kulikage.parts"],
+    "knowsAbout": ["Plasma energy","Ozone generators","Composite armor","Aerospace certification"],
+    "award": ["Hello Tomorrow Deep Tech Pioneer"]
+  }
+  </script>
 </head>
 <body>
-  <!-- Header / Nav -->
   <header class="site-header">
     <a class="brand" href="#">
       <img class="brand-mark" src="assets/logo.svg" alt="K logo">
       <span class="brand-name">Kulikov Tech</span>
     </a>
-    <button class="nav-toggle" aria-label="Open menu" id="navToggle">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
     <nav class="nav" id="siteNav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#recognition">Recognition</a>
       <a href="#contact">Contact</a>
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">☾</button>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero" id="home" aria-label="Intro">
-    <!-- decorative background collage -->
     <div class="collage">
-      <!-- replace images in assets/shot*.jpg to your screenshots; keep structure -->
-      <img src="assets/shot1.jpg" alt="" class="tile t1">
-      <img src="assets/shot2.jpg" alt="" class="tile t2">
-      <img src="assets/shot3.jpg" alt="" class="tile t3">
-      <img src="assets/shot4.jpg" alt="" class="tile t4">
-      <img src="assets/shot5.jpg" alt="" class="tile t5">
-      <img src="assets/shot6.jpg" alt="" class="tile t6">
+      <img src="assets/shot1.jpg" alt="" class="tile t1" loading="lazy" decoding="async">
+      <img src="assets/shot2.jpg" alt="" class="tile t2" loading="lazy" decoding="async">
+      <img src="assets/shot3.jpg" alt="" class="tile t3" loading="lazy" decoding="async">
+      <img src="assets/shot4.jpg" alt="" class="tile t4" loading="lazy" decoding="async">
+      <img src="assets/shot5.jpg" alt="" class="tile t5" loading="lazy" decoding="async">
+      <img src="assets/shot6.jpg" alt="" class="tile t6" loading="lazy" decoding="async">
     </div>
 
-    <!-- content -->
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>Nikolai Kulikov</h1>
-        <p class="tagline">Engineer • Inventor • Visionary</p>
-        <a class="hero-cta" href="#projects">Explore projects</a>
+        <h1>Deep‑Tech Engineer & Inventor</h1>
+        <p class="tagline">Plasma energy • Ozone restoration • Advanced composites. From concept → prototype → certification.</p>
+        <div class="cta-row">
+          <a class="hero-cta primary" href="#contact">Contact</a>
+          <a class="hero-cta ghost" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
       </div>
 
-      <!-- portrait; replace assets/photo.jpg if нужно -->
       <div class="hero-portrait">
         <div class="portrait-frame">
-          <img src="assets/photo.jpg" alt="Nikolai Kulikov portrait" onerror="this.style.display='none'">
-          <!-- fallback: embossed logo if photo not provided -->
-          <div class="portrait-fallback">
-            <img src="assets/logo.svg" alt="" />
-          </div>
+          <img src="assets/photo.jpg" alt="Nikolai Kulikov portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="portrait-fallback"><img src="assets/logo.svg" alt=""></div>
         </div>
       </div>
     </div>
 
-    <!-- overlay CTA card like on the screenshot -->
+    <!-- quick message -->
     <div class="cta-overlay" role="region" aria-label="Quick contact">
       <div class="cta-left">
-        <strong>Напишите нам</strong>
-        <span class="muted">Хочу сайт/оценку/сотрудничество — опишите кратко запрос</span>
+        <strong>Напишите мне</strong>
+        <span class="muted">Коротко опишите задачу — я отвечу.</span>
       </div>
-      <form class="cta-form" id="ctaForm">
-        <input type="text" id="ctaMsg" placeholder="Коротко опишите запрос…" aria-label="Message">
-        <button type="submit" class="cta-btn">Get in touch</button>
+      <form class="cta-form" action="https://formspree.io/f/xxxxxx" method="POST">
+        <input type="email" name="email" placeholder="Ваш email" required>
+        <input type="text" name="message" placeholder="Сообщение…" required>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+        <button type="submit" class="cta-btn">Send</button>
       </form>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- EXPERTISE -->
   <section class="section" id="about">
     <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Accomplished engineering specialist with over a decade of experience in innovative design, advanced manufacturing,
-        and complex engineering solutions. Focused on deep-tech innovation in plasma energy, ozone-layer restoration,
-        and composite materials. Hello Tomorrow <em>Deep Tech Pioneer</em>. Prior defense projects experience; now building
-        clean-tech solutions in the U.S.
+      <h2>Expertise</h2>
+      <ul class="chips">
+        <li>Plasma systems</li><li>High‑voltage & HV safety</li><li>Composite materials</li>
+        <li>Rapid prototyping</li><li>R&D leadership</li><li>Certification roadmaps (FAA)</li>
+      </ul>
+      <p class="lead">
+        Engineering specialist with 10+ years in innovative design & advanced manufacturing. Focused on deep‑tech products that move from lab validation to field deployment.
       </p>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS as case cards -->
   <section class="section" id="projects">
     <div class="container">
-      <h2>Key Projects</h2>
+      <h2>Highlighted Projects</h2>
       <div class="cards">
         <article class="card">
           <h3>TorrideX</h3>
-          <p>Next-generation plasma generator using radioisotope ionization to produce clean electricity in compact form. Current status: TRL 4–5; fundraising in progress.</p>
-          <div class="pill">Energy</div>
+          <p class="small">Energy • TRL 4–5 • Provisional patent</p>
+          <p>Next‑gen plasma generator using radioisotope ionization to deliver compact, long‑life electrical power.</p>
+          <ul class="facts"><li>Compact & scalable</li><li>Long‑duration power</li><li>Clean operation</li></ul>
         </article>
         <article class="card">
           <h3>SkyForge</h3>
-          <p>Ozone-layer restoration via aircraft-mounted ozone generators operating in the lower stratosphere. FAA certification roadmap in progress.</p>
-          <div class="pill">Aerospace</div>
+          <p class="small">Aerospace • Certification</p>
+          <p>Aircraft‑mounted ozone generators operating in the lower stratosphere for localized ozone restoration.</p>
+          <ul class="facts"><li>FAA roadmap in progress</li><li>In‑flight deployment concept</li><li>Targeted environmental impact</li></ul>
         </article>
         <article class="card">
           <h3>SynthoShield</h3>
-          <p>Advanced composite armor with SiC granules and multilayer reinforcement to improve ballistic protection while minimizing weight.</p>
-          <div class="pill">Materials</div>
+          <p class="small">Materials • Ballistics</p>
+          <p>Composite armor with SiC granules and multilayer reinforcement to raise protection while minimizing weight.</p>
+          <ul class="facts"><li>Lightweight design</li><li>Layered energy dissipation</li><li>Modular fabrication</li></ul>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section class="section" id="recognition">
+    <div class="container">
+      <h2>Recognition & Media</h2>
+      <div class="badges">
+        <div class="badge">Hello Tomorrow — Deep Tech Pioneer</div>
+        <div class="badge">CEOWorld Magazine</div>
+        <div class="badge">TechBullion</div>
+        <div class="badge">IAENG • NBAA</div>
+      </div>
+      <p class="note">Open to R&D partnerships, advisory, and speaking.</p>
     </div>
   </section>
 
@@ -118,20 +150,28 @@
   <section class="section" id="contact">
     <div class="container contact">
       <h2>Contact</h2>
-      <ul>
+      <form class="form" action="https://formspree.io/f/xxxxxx" method="POST">
+        <div class="grid">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+        <button class="btn" type="submit">Send message</button>
+      </form>
+      <ul class="links">
         <li><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></li>
         <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kulikage" target="_blank" rel="noopener">linkedin.com/in/kulikage</a></li>
         <li><strong>Instagram:</strong> <a href="https://instagram.com/kulikage.parts" target="_blank" rel="noopener">@kulikage.parts</a></li>
+        <li><a class="btn ghost" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
       </ul>
-      <a class="btn" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank">Download CV (PDF)</a>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
       <span>© <span id="y"></span> Nikolai Kulikov</span>
-      <span class="sep">•</span>
-      <span>kulikov.tech</span>
+      <span class="sep">•</span><span>kulikov.tech</span>
     </div>
   </footer>
 
