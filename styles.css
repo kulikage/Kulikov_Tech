@@ -53,40 +53,57 @@ body{
 .nav-toggle{display:none; background:none; border:0; cursor:pointer}
 .nav-toggle span{display:block; width:24px; height:2px; background:var(--text); margin:5px 0}
 
-/* =========== Hero =========== */
+/* =========== Hero (Variant A: gradient + noise) =========== */
 .hero{
   position:relative;
   min-height:82vh;
   display:flex;
   align-items:center;
   overflow:hidden;
-
-  /* чистый фон: мягкие акцент-градиенты + светлый фон */
   background:
-    radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.10), transparent 60%),
-    radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.10), transparent 60%),
+    radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.16), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.16), transparent 60%),
     linear-gradient(180deg, #f5f8ff 0%, #eef3fb 60%, #e9f1ff 100%);
 }
 @media (prefers-color-scheme: dark){
   .hero{
     background:
-      radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.12), transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.12), transparent 60%),
+      radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.20), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.20), transparent 60%),
       linear-gradient(180deg, #0e131b 0%, #0b111a 100%);
   }
 }
-
-/* тонкий "шум", чтобы фон не был плоским */
 .hero::after{
   content:"";
   position:absolute; inset:0; pointer-events:none;
+  z-index:0;
   background-image: url("data:image/svg+xml;utf8,\
   <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
-  <filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/>\
-  <feColorMatrix type='saturate' values='0'/>\
-  <feComponentTransfer><feFuncA type='table' tableValues='0 0 0 0 0 0.04'/></feComponentTransfer></filter>\
-  <rect width='120' height='120' filter='url(%23n)'/></svg>");
+    <filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/>\
+    <feColorMatrix type='saturate' values='0'/>\
+    <feComponentTransfer><feFuncA type='table' tableValues='0 0 0 0 0 0.04'/></feComponentTransfer></filter>\
+    <rect width='120' height='120' filter='url(%23n)'/>\
+  </svg>");
 }
+
+/* hero layout & text */
+.hero-inner{
+  position:relative; z-index:1;     /* контент над шумом */
+  width:100%; max-width:1200px; margin:0 auto;
+  padding:72px 24px 68px;
+  display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center;
+}
+.hero-text h1{font-size:48px; line-height:1.05; margin:0 0 10px}
+.tagline{color:var(--muted); font-weight:600; margin:0 0 26px; max-width:52ch}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap}
+.hero-cta{
+  display:inline-block; text-decoration:none; padding:12px 22px; border-radius:12px; font-weight:800;
+  transition:.18s ease;
+}
+.hero-cta.primary{color:#fff; background:linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:var(--shadow)}
+.hero-cta.ghost{color:var(--text); border:1px solid rgba(255,255,255,.25)}
+.hero-cta.primary:hover, .btn:hover{transform:translateY(-1px); filter:saturate(110%)}
+.hero-cta.ghost:hover{border-color:rgba(59,130,246,.5)}
 
 /* portrait */
 .hero-portrait{display:flex; justify-content:center}
@@ -100,8 +117,8 @@ body{
 .portrait-frame img{
   position:relative; z-index:1;
   width:100%; height:100%;
-  object-fit:cover;             /* можно менять, см. ниже */
-  filter:none;                  /* убрали затемнение */
+  object-fit:cover;
+  filter:none;
 }
 .portrait-fallback{
   display:none;
@@ -109,8 +126,7 @@ body{
   background:linear-gradient(180deg,#0a0f18 0,#0c121c 100%);
   opacity:.25;
 }
-.portrait-frame.noimg .portrait-fallback{display:grid;}
-
+.portrait-frame.noimg .portrait-fallback{display:grid}
 
 /* полностью убираем коллаж */
 .collage{ display:none !important; }
@@ -121,7 +137,6 @@ body{
 h2{font-size:32px; margin:0 0 14px}
 p{line-height:1.7; color:#dfe7f6}
 @media (prefers-color-scheme: light){ p{color:#233047} }
-
 .lead{max-width:70ch}
 
 /* chips */
@@ -152,12 +167,20 @@ p{line-height:1.7; color:#dfe7f6}
 .badge{padding:8px 12px; border:1px dashed rgba(255,255,255,.25); border-radius:10px}
 .note{color:var(--muted)}
 
-/* contact */
+/* contact – улучшенные контуры и фокус */
 .form .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 .form input, .form textarea{
-  width:100%; padding:12px 14px; border-radius:10px;
-  border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.03); color:var(--text); font-size:16px
+  width:100%; padding:12px 14px; border-radius:12px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.04);
+  color:var(--text); font-size:16px;
+  transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.form input::placeholder, .form textarea::placeholder{ color:rgba(231,238,249,.65) }
+.form input:hover, .form textarea:hover{ border-color:rgba(255,255,255,.4) }
+.form input:focus, .form textarea:focus{
+  outline:none; border-color:#66a8ff; box-shadow:0 0 0 3px rgba(59,130,246,.35);
+  background:rgba(255,255,255,.06);
 }
 .form textarea{resize:vertical; min-height:120px}
 .links{list-style:none; padding:0; margin:16px 0 0; display:flex; gap:10px; flex-wrap:wrap}
@@ -168,6 +191,15 @@ p{line-height:1.7; color:#dfe7f6}
   transition:.18s ease;
 }
 .btn.ghost{color:var(--text); background:none; border:1px solid rgba(255,255,255,.25)}
+
+@media (prefers-color-scheme: light){
+  .form input, .form textarea{ border:1px solid #c8d6f2; background:#fff; color:#0d1420 }
+  .form input::placeholder, .form textarea::placeholder{ color:#6b7a95 }
+  .form input:hover, .form textarea:hover{ border-color:#a9bfe8 }
+  .form input:focus, .form textarea:focus{
+    border-color:#5a9fff; box-shadow:0 0 0 3px rgba(59,130,246,.25); background:#fff;
+  }
+}
 
 /* footer */
 .site-footer{border-top:1px solid rgba(255,255,255,.08); padding:22px 0; color:var(--muted)}
