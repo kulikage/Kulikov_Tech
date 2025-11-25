@@ -241,3 +241,14 @@ p{line-height:1.7; color:#dfe7f6}
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important; transition:none!important}
 }
+
+/* скрыть honeypot */
+.hp{ display:none !important; }
+
+/* статус отправки */
+.form-status{ margin-top:12px; font-weight:700; color:var(--muted) }
+.form-status.success{ color:#22d3ee }         /* бирюзовый — ОК */
+.form-status.error{ color:#ff6b6b }           /* красный — ошибка */
+
+/* кнопка при отправке */
+.btn[disabled]{ opacity:.7; cursor:wait; filter:saturate(90%) }
