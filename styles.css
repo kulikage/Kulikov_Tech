@@ -167,6 +167,26 @@ p{line-height:1.7; color:#dfe7f6}
 .badge{padding:8px 12px; border:1px dashed rgba(255,255,255,.25); border-radius:10px}
 .note{color:var(--muted)}
 
+/* recognition logos */
+.logo-badges{
+  list-style:none; padding:0; margin:10px 0 0;
+  display:flex; flex-wrap:wrap; gap:18px 24px; align-items:center;
+}
+.logo-badges li{ display:flex; align-items:center; }
+.logo-badges .logo{
+  height:44px; max-width:200px; width:auto; display:block;
+  filter:grayscale(100%) contrast(.92) brightness(.9);
+  opacity:.85; transition:.2s ease;
+}
+.logo-badges a:hover .logo{
+  filter:none; opacity:1; transform:translateY(-1px);
+}
+@media (max-width:680px){
+  .logo-badges{ gap:14px 18px }
+  .logo-badges .logo{ height:36px; max-width:160px }
+}
+
+
 /* contact – улучшенные контуры и фокус */
 .form .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 .form input, .form textarea{
