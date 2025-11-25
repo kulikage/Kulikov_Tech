@@ -170,27 +170,38 @@
 </section>
 
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container contact">
-      <h2>Contact</h2>
-      <form class="form" action="https://formspree.io/f/xxxxxx" method="POST">
-        <div class="grid">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
-        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
-        <button class="btn" type="submit">Send message</button>
-      </form>
-      <ul class="links">
-        <li><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kulicage" target="_blank" rel="noopener">linkedin.com/in/kulicage</a></li>
-        <li><strong>Instagram:</strong> <a href="https://instagram.com/kulicage" target="_blank" rel="noopener">@kulicage</a></li>
-        <li><a class="btn ghost" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
-      </ul>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container contact">
+    <h2>Contact</h2>
+
+    <form id="contactForm" class="form" action="https://formspree.io/f/xnnywoaq" method="POST">
+      <div class="grid">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+
+      <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+
+      <!-- honeypot (боты заполняют, люди — нет) -->
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+      <!-- тема письма -->
+      <input type="hidden" name="_subject" value="Website contact — kulikov.tech">
+
+      <button id="sendBtn" class="btn" type="submit">Send message</button>
+      <div class="form-status" aria-live="polite"></div>
+    </form>
+
+    <ul class="links">
+      <li><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kulikage" target="_blank" rel="noopener">linkedin.com/in/kulikage</a></li>
+      <li><strong>Instagram:</strong> <a href="https://instagram.com/kulikage.parts" target="_blank" rel="noopener">@kulikage.parts</a></li>
+      <li><a class="btn ghost" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
+    </ul>
+  </div>
+</section>
+
 
   <footer class="site-footer">
     <div class="container">
@@ -202,6 +213,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
