@@ -27,3 +27,40 @@ if (img && pf){
   img.addEventListener('error', showFallback);
   if (!img.complete || img.naturalWidth === 0) showFallback();
 }
+
+// Formspree async submit
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const btn = document.getElementById('sendBtn');
+  const status = form.querySelector('.form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (status) { status.textContent = ''; status.className = 'form-status'; }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        if (status) { status.textContent = 'Thank you! I will get back to you shortly.'; status.classList.add('success'); }
+      } else {
+        if (status) { status.textContent = 'Sorry, the form could not be sent. Please email me directly: nikolai@kulikov.tech'; status.classList.add('error'); }
+      }
+    } catch (err) {
+      if (status) { status.textContent = 'Network error. Please try again later or email me directly.'; status.classList.add('error'); }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+})();
