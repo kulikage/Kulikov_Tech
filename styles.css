@@ -72,17 +72,17 @@ body{
   display:flex;
   align-items:center;
   overflow:hidden;
+  /* Оставляем только радиальные пятна, убираем linear-gradient в конце */
   background:
     radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.16), transparent 60%),
-    radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.16), transparent 60%),
-    linear-gradient(180deg, #f5f8ff 0%, #eef3fb 60%, #e9f1ff 100%);
+    radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.16), transparent 60%);
 }
 @media (prefers-color-scheme: dark){
   .hero{
+    /* То же самое для темной темы — только пятна */
     background:
       radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.20), transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.20), transparent 60%),
-      linear-gradient(180deg, #0e131b 0%, #0b111a 100%);
+      radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,.20), transparent 60%);
   }
 }
 .hero::after{
