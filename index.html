@@ -39,28 +39,28 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#">
+    <a class="brand" href="index.html">
       <img class="brand-mark" src="assets/logo.svg" alt="K logo">
       <span class="brand-name">Kulikov Tech</span>
     </a>
     <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
     <nav class="nav" id="siteNav">
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Case Studies</a>
       <a href="#recognition">Recognition</a>
       <a href="#contact">Contact</a>
       <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">☾</button>
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero" id="home" aria-label="Intro">
     <div class="hero-inner">
       <div class="hero-text">
         <h1>Deep-Tech Engineer &amp; Inventor</h1>
         <p class="tagline">
-          Plasma energy • Ozone restoration • Advanced composites.
-          From concept → prototype → certification.
+          Plasma energy • Ozone restoration • R&D Leadership.
+          <br>From concept → prototype → field deployment.
         </p>
 
         <div class="cta-row">
@@ -76,131 +76,152 @@
         </div>
       </div>
     </div>
-
-    <!-- collage disabled (Variant A) -->
     <div class="collage" aria-hidden="true"></div>
   </section>
 
-  <!-- EXPERTISE -->
   <section class="section" id="about">
     <div class="container">
       <h2>Expertise</h2>
       <ul class="chips">
-        <li>Plasma systems</li><li>High-voltage & HV safety</li><li>Composite materials</li>
-        <li>Rapid prototyping</li><li>R&amp;D leadership</li><li>Certification roadmaps (FAA)</li>
+        <li>Plasma Physics</li>
+        <li>High-voltage Systems</li>
+        <li>Rapid Prototyping (FDM/CNC)</li>
+        <li>CFD Simulation</li>
+        <li>Certification Roadmaps (FAA)</li>
       </ul>
       <p class="lead">
         Engineering specialist with 10+ years in innovative design & advanced manufacturing.
-        Focused on deep-tech products that move from lab validation to field deployment.
+        I bridge the gap between theoretical physics and functional hardware.
       </p>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
+  <section class="section" id="process">
     <div class="container">
-      <h2>Highlighted Projects</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>TorrideX</h3>
-          <p class="small">Energy • TRL 4–5 • Provisional patent</p>
-          <p>Next-gen plasma generator using radioisotope ionization to deliver compact, long-life electrical power.</p>
-          <ul class="facts">
-            <li>Compact & scalable</li>
-            <li>Long-duration power</li>
-            <li>Clean operation</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>SkyForge</h3>
-          <p class="small">Aerospace • Certification</p>
-          <p>Aircraft-mounted ozone generators operating in the lower stratosphere for localized ozone restoration.</p>
-          <ul class="facts">
-            <li>FAA roadmap in progress</li>
-            <li>In-flight deployment concept</li>
-            <li>Targeted environmental impact</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>SynthoShield</h3>
-          <p class="small">Materials • Ballistics</p>
-          <p>Composite armor with SiC granules and multilayer reinforcement to raise protection while minimizing weight.</p>
-          <ul class="facts">
-            <li>Lightweight design</li>
-            <li>Layered energy dissipation</li>
-            <li>Modular fabrication</li>
-          </ul>
-        </article>
+      <h2>How I Work (The R&D Loop)</h2>
+      <div class="process-steps" style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+        <div>
+          <h3 style="font-size: 1.2rem; color: var(--accent);">01 Hypothesis</h3>
+          <p class="small">Define the physical limit we are trying to break.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; color: var(--accent);">02 Simulation</h3>
+          <p class="small">CAD & CFD modeling to reduce physical iteration costs.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; color: var(--accent);">03 Prototyping</h3>
+          <p class="small">Rapid fabrication (FDM, CNC, Breadboarding).</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; color: var(--accent);">04 Validation</h3>
+          <p class="small">Data acquisition (Python/Excel) & failure analysis.</p>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- RECOGNITION -->
-<section class="section" id="recognition">
-  <div class="container">
-    <h2>Recognition &amp; Media</h2>
+  <section class="section" id="projects">
+    <div class="container">
+      <h2>Selected Case Studies</h2>
+      <div class="cards">
+        
+        <article class="card">
+          <h3>High-Performance FDM Mod</h3>
+          <p class="small">Manufacturing • Firmware • Automation</p>
+          <ul class="facts">
+            <li><strong>Problem:</strong> Standard extruders failed to print soft TPU (Shore 65A) at scale.</li>
+            <li><strong>Approach:</strong> Custom CoreXY rig + MKS Eagle 32-bit + Marlin Firmware rework.</li>
+            <li><strong>Impact:</strong> 2,500+ units sold, 15% fuel savings for end-users.</li>
+          </ul>
+          <a href="case-fdm.html" class="btn small" style="margin-top:1rem;">View Case Study</a>
+        </article>
 
-    <ul class="logo-badges">
-      <li>
-        <a href="https://www.linkedin.com/posts/kulicage_skyforge-hellotomorrow-deeptechpioneer-share-7262498561810952195-gTk_?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaSUy0BTlfiMIl9-ji0_ZGBM7wBDEqYC2w" target="_blank" rel="noopener" aria-label="Hello Tomorrow – Deep Tech Pioneers">
-          <img class="logo" src="assets/Deep_Tech_Pioneers.png" alt="Hello Tomorrow – Deep Tech Pioneers">
-        </a>
-      </li>
-      <li>
-        <a href="https://ceoworld.biz/2024/12/19/reimagining-aviation-for-ecological-restoration-nikolai-kulikovs-mission-to-heal-the-ozone-layer/" target="_blank" rel="noopener" aria-label="CEOWORLD Magazine">
-          <img class="logo" src="assets/CEOWORLD.png" alt="CEOWORLD Magazine">
-        </a>
-      </li>
-      <li>
-        <a href="https://techbullion.com/revolutionizing-climate-tech-nikolai-kulikov-on-restoring-the-ozone-layer-with-deep-tech-solutions/" target="_blank" rel="noopener" aria-label="TechBullion">
-          <img class="logo" src="assets/TechBullion.png" alt="TechBullion">
-        </a>
-      </li>
-      <li>
-        <a href="assets/NBAA_certificate.jpeg" target="_blank" rel="noopener" aria-label="NBAA Member">
-          <img class="logo" src="assets/NBAA.png" alt="Member of NBAA">
-        </a>
-      </li>
-    </ul>
+        <article class="card">
+          <h3>SkyForge Ozone Systems</h3>
+          <p class="small">Aerospace • CFD • Sensor Fusion</p>
+          <ul class="facts">
+            <li><strong>Problem:</strong> Validate ozone generation at -60°C and high-velocity airflow.</li>
+            <li><strong>Approach:</strong> SolidWorks Flow CFD + Arduino sensor array integration.</li>
+            <li><strong>Impact:</strong> Optimized aerodynamics & validated data acquisition logic.</li>
+          </ul>
+          <a href="case-skyforge.html" class="btn small" style="margin-top:1rem;">View Case Study</a>
+        </article>
 
-    <p class="note">Open to R&amp;D partnerships, advisory, and speaking.</p>
-  </div>
-</section>
+        <article class="card">
+          <h3>TorrideX Energy</h3>
+          <p class="small">Plasma Physics • High Voltage</p>
+          <ul class="facts">
+            <li><strong>Problem:</strong> Extract energy from plasma without thermal cycles.</li>
+            <li><strong>Approach:</strong> 200W HV induction setup + ExB field manipulation.</li>
+            <li><strong>Impact:</strong> Proof-of-concept for capacitive coupling; patent filed.</li>
+          </ul>
+          <a href="case-torridex.html" class="btn small" style="margin-top:1rem;">View Case Study</a>
+        </article>
 
+        <article class="card">
+          <h3>Heavy Industry & Robotics</h3>
+          <p class="small">Complex CAD • Kinematics</p>
+          <ul class="facts">
+            <li><strong>Problem:</strong> Design assemblies for offshore & radiation zones.</li>
+            <li><strong>Approach:</strong> Motion-compensated kinematics & shielding layouts.</li>
+            <li><strong>Impact:</strong> Delivered operational algorithms for state enterprises.</li>
+          </ul>
+          <a href="case-heavy.html" class="btn small" style="margin-top:1rem;">View Case Study</a>
+        </article>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container contact">
-    <h2>Contact</h2>
-
-    <form id="contactForm" class="form" action="https://formspree.io/f/xnnywoaq" method="POST">
-      <div class="grid">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Email" required>
       </div>
+    </div>
+  </section>
 
-      <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+  <section class="section" id="recognition">
+    <div class="container">
+      <h2>Recognition &amp; Media</h2>
+      <ul class="logo-badges">
+        <li>
+          <a href="https://www.linkedin.com/posts/kulicage_skyforge-hellotomorrow-deeptechpioneer-share-7262498561810952195-gTk_" target="_blank" rel="noopener">
+            <img class="logo" src="assets/Deep_Tech_Pioneers.png" alt="Hello Tomorrow">
+          </a>
+        </li>
+        <li>
+          <a href="https://ceoworld.biz/2024/12/19/reimagining-aviation-for-ecological-restoration-nikolai-kulikovs-mission-to-heal-the-ozone-layer/" target="_blank" rel="noopener">
+            <img class="logo" src="assets/CEOWORLD.png" alt="CEOWORLD">
+          </a>
+        </li>
+        <li>
+          <a href="https://techbullion.com/revolutionizing-climate-tech-nikolai-kulikov-on-restoring-the-ozone-layer-with-deep-tech-solutions/" target="_blank" rel="noopener">
+            <img class="logo" src="assets/TechBullion.png" alt="TechBullion">
+          </a>
+        </li>
+        <li>
+          <a href="assets/NBAA_certificate.jpeg" target="_blank" rel="noopener">
+            <img class="logo" src="assets/NBAA.png" alt="NBAA">
+          </a>
+        </li>
+      </ul>
+      <p class="note">Open to R&D partnerships and engineering roles.</p>
+    </div>
+  </section>
 
-      <!-- honeypot (боты заполняют, люди — нет) -->
-      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
-
-      <!-- тема письма -->
-      <input type="hidden" name="_subject" value="Website contact — kulikov.tech">
-
-      <button id="sendBtn" class="btn" type="submit">Send message</button>
-      <div class="form-status" aria-live="polite"></div>
-    </form>
-
-    <ul class="links">
-      <li><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></li>
-      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kulicage" target="_blank" rel="noopener">linkedin.com/in/kulicage</a></li>
-      <li><a class="btn ghost" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
-    </ul>
-  </div>
-</section>
-
+  <section class="section" id="contact">
+    <div class="container contact">
+      <h2>Contact</h2>
+      <form id="contactForm" class="form" action="https://formspree.io/f/xnnywoaq" method="POST">
+        <div class="grid">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Website contact — kulikov.tech">
+        <button id="sendBtn" class="btn" type="submit">Send message</button>
+      </form>
+      <ul class="links">
+        <li><strong>Email:</strong> <a href="mailto:nikolai@kulikov.tech">nikolai@kulikov.tech</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kulicage" target="_blank" rel="noopener">linkedin.com/in/kulicage</a></li>
+        <li><a class="btn ghost" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
@@ -212,8 +233,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
