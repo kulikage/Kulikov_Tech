@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FDM Manufacturing Case Study — Nikolai Kulikov</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">← Back to Portfolio</a>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Custom FDM for Elastomer Mass Production</h1>
+      <p class="lead">From garage prototype to 2,500+ units shipped globally.</p>
+      
+      <div class="specs" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+        <p><strong>Role:</strong> Lead Engineer & Founder</p>
+        <p><strong>Tools:</strong> Marlin FW, C++, SolidWorks, MKS Eagle (32-bit), TMC2209</p>
+      </div>
+
+      <h3>The Challenge</h3>
+      <p>I identified a niche market for diesel engine intercooler seals made from high-performance polyurethane. However, standard FDM printers could not handle soft TPU (Shore 65A) at production speeds—the filament would buckle and jam in the extruder gear path.</p>
+
+      <hr>
+
+      <h3>The Engineering Solution</h3>
+      <p>Instead of buying expensive industrial printers, I engineered a custom solution:</p>
+      <ul>
+        <li><strong>Hardware:</strong> Retrofitted an Anet A8 Plus frame with a direct-drive extruder path optimized for flexible filaments. Replaced the mainboard with an MKS Eagle (32-bit) and TMC2209 drivers for precise micro-stepping and noise reduction.</li>
+        <li><strong>Firmware:</strong> Modified Marlin firmware source code. Tuned thermal runaway protection, recalibrated stepper motor current (Vref) for high-torque/low-heat balance, and optimized linear advance settings for elastomeric flow.</li>
+      </ul>
+
+      <hr>
+
+      <h3>Impact & Data Analysis</h3>
+      <p>The system achieved reliable 24/7 operation with near-zero failure rate.</p>
+      
+      <div class="chart-container" style="margin: 2rem 0;">
+        <h4>Long-Term Impact Analysis</h4>
+        <p class="small"><em>Data visualized using Python (Pandas/Matplotlib) based on sales logs & fleet mileage assumptions.</em></p>
+        <img src="assets/impact_chart.png" alt="Graph showing cumulative vehicle upgrades and CO2 savings" style="width: 100%; max-width: 800px; border-radius: 8px; border: 1px solid #333;">
+      </div>
+
+      <p><strong>Environment:</strong> The product restores airtight intake systems, proven to reduce fuel consumption by ~15% and cut CO2 emissions (approx. 770 tons annually across the fleet).</p>
+      
+      <div style="margin-top: 3rem;">
+         <a href="index.html#projects" class="btn ghost">← Back to Projects</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
