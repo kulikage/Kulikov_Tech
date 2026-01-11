@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkyForge Case Study — Nikolai Kulikov</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">← Back to Portfolio</a>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>SkyForge: Stratospheric Ozone Systems</h1>
+      <p class="lead">Validating ozone generation at -60°C and FL400 altitudes.</p>
+
+      <div class="specs" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+        <p><strong>Role:</strong> Systems Engineer</p>
+        <p><strong>Tools:</strong> Arduino, C++, SolidWorks Flow Simulation, Ozone Sensors</p>
+      </div>
+
+      <h3>The Challenge</h3>
+      <p>Developing an ozone restoration payload for aircraft required the system to operate at 10–13 km altitude (Crusing Altitude), where temperatures drop to -60°C and air density is minimal.</p>
+
+      <hr>
+
+      <h3>The Approach</h3>
+      <ul>
+        <li><strong>Simulation:</strong> Before cutting metal, I used <strong>SolidWorks Flow Simulation</strong> to iterate the housing geometry. The goal was to reduce the velocity of the incoming Mach 0.8 airflow to a laminar flow suitable for stable corona discharge.</li>
+        <li><strong>Prototyping:</strong> Built a sensor integration testbed using Arduino. Integrated high-sensitivity sensors for Ozone (O3), Flow Rate, Pressure, and Temperature.</li>
+        <li><strong>Power:</strong> Modified a standard HV power supply to maintain stable arc discharge under varying load conditions.</li>
+      </ul>
+
+      <hr>
+
+      <h3>Result</h3>
+      <p>Validated the aerodynamic design and sensor fusion logic. Established the baseline architecture for the "In-Flight Ozone Restoration" concept (Provisional Patent work).</p>
+
+      <div style="margin-top: 3rem;">
+         <a href="index.html#projects" class="btn ghost">← Back to Projects</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
