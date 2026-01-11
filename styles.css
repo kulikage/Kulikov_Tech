@@ -3,6 +3,7 @@
   --panel:#121a27; --text:#e7eef9; --muted:#9fb0c9;
   --accent:#3b82f6; --accent-2:#22d3ee;
   --card:#101722; --ring:#2a3548;
+  --surface: rgba(255,255,255,.03); /* Добавлена переменная для фона карточек */
   --shadow: 0 8px 30px rgba(0,0,0,.35);
 }
 
@@ -11,6 +12,7 @@
     --bg:#f7f9fc; --bg-2:#ffffff;
     --panel:#ffffff; --text:#0d1420; --muted:#4b5b73;
     --card:#ffffff; --ring:#dbe3f2;
+    --surface: #ffffff;
   }
 }
 
@@ -27,12 +29,19 @@ body{
 .site-header{
   position:sticky; top:0; z-index:40;
   display:flex; align-items:center; justify-content:space-between;
-  padding:14px 20px;
+  padding:14px 0; /* Отступы по бокам теперь задает .container внутри */
   background:rgba(10,14,20,.55);
   backdrop-filter:saturate(160%) blur(10px);
   border-bottom:1px solid rgba(255,255,255,.06);
   box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
+/* Хак, чтобы header использовал container для выравнивания */
+.site-header > .container, .site-header > a, .site-header > button, .site-header > nav {
+  /* Если в header нет контейнера, это не сломает верстку, 
+     но лучше обернуть содержимое хедера в div.container в HTML */
+  padding-left: 20px; padding-right: 20px;
+}
+
 @media (prefers-color-scheme: light){
   .site-header{background:rgba(255,255,255,.7); border-bottom:1px solid #eef2f7}
 }
@@ -53,7 +62,7 @@ body{
 .nav-toggle{display:none; background:none; border:0; cursor:pointer}
 .nav-toggle span{display:block; width:24px; height:2px; background:var(--text); margin:5px 0}
 
-/* =========== Hero (Variant A: gradient + noise) =========== */
+/* =========== Hero =========== */
 .hero{
   position:relative;
   min-height:82vh;
@@ -86,9 +95,8 @@ body{
   </svg>");
 }
 
-/* hero layout & text */
 .hero-inner{
-  position:relative; z-index:1;     /* контент над шумом */
+  position:relative; z-index:1;
   width:100%; max-width:1200px; margin:0 auto;
   padding:72px 24px 68px;
   display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center;
@@ -105,7 +113,6 @@ body{
 .hero-cta.primary:hover, .btn:hover{transform:translateY(-1px); filter:saturate(110%)}
 .hero-cta.ghost:hover{border-color:rgba(59,130,246,.5)}
 
-/* portrait */
 .hero-portrait{display:flex; justify-content:center}
 .portrait-frame{
   width:340px; height:420px; border-radius:24px;
@@ -126,18 +133,29 @@ body{
   background:linear-gradient(180deg,#0a0f18 0,#0c121c 100%);
   opacity:.25;
 }
-.portrait-frame.noimg .portrait-fallback{display:grid}
-
-/* полностью убираем коллаж */
 .collage{ display:none !important; }
 
-/* =========== Sections =========== */
-.section{padding:64px 20px}
-.container{max-width:1100px; margin:0 auto}
+/* =========== Sections & Container (FIXED) =========== */
+.section{padding:64px 0} /* Убрал padding по бокам здесь, так как он есть в container */
+
+.container{
+  width: 100%;
+  max-width:1200px; 
+  margin:0 auto;
+  padding: 0 24px; /* ВАЖНО: Отступы от краев экрана */
+}
+
+h1{ font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.1; }
 h2{font-size:32px; margin:0 0 14px}
-p{line-height:1.7; color:#dfe7f6}
+h3{ font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+h4{ font-size: 1.2rem; margin: 1rem 0; color: var(--muted); }
+
+p{line-height:1.7; color:#dfe7f6; margin-bottom: 1rem;}
 @media (prefers-color-scheme: light){ p{color:#233047} }
-.lead{max-width:70ch}
+.lead{font-size: 1.15rem; max-width:70ch; color: var(--muted);}
+
+hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0; }
+@media (prefers-color-scheme: light){ hr { border-top: 1px solid rgba(0,0,0,0.1); } }
 
 /* chips */
 .chips{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0 0 16px}
@@ -147,87 +165,110 @@ p{line-height:1.7; color:#dfe7f6}
   border:1px solid rgba(59,130,246,.35); font-weight:700; font-size:12px
 }
 
-/* cards */
-.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px}
-.card{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:14px; padding:18px; box-shadow:var(--shadow)
+/* =========== CARDS (FIXED LAYOUT) =========== */
+.cards {
+  display: grid;
+  /* Адаптивность: колонки не уже 300px, занимают всю ширину */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 24px; 
+  margin-top: 24px;
+  align-items: stretch; /* Растягивает карточки по высоте */
 }
-.card .small{color:var(--muted); margin-top:-2px}
-.facts{margin:10px 0 0 18px} .facts li{margin:4px 0}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px; 
+  padding: 24px; 
+  box-shadow: var(--shadow);
+  /* Flex чтобы прижать кнопку к низу */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card h3 { margin-top: 0; }
+.card .small { color: var(--muted); margin-top: -0.5rem; margin-bottom: 1rem; display: block;}
+.facts { margin: 0 0 20px 18px; padding-left: 0; } 
+.facts li { margin: 6px 0; color: var(--muted); }
+
+/* Кнопка всегда внизу карточки */
+.card .btn { margin-top: auto; text-align: center; }
 
 @media (prefers-color-scheme: light){
-  .card{ box-shadow:0 10px 28px rgba(18,26,39,.08) }
-  .nav a{ color:#2a3650 } .nav a:hover{ color:#0d1420 }
+  .card{ box-shadow:0 10px 28px rgba(18,26,39,.08); border-color: rgba(0,0,0,0.05); }
+}
+
+/* =========== Images & Charts =========== */
+.chart-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-top: 10px;
+}
+@media (prefers-color-scheme: light){
+  .chart-container img { border-color: rgba(0,0,0,0.1); }
 }
 
 /* recognition */
-.badges{display:flex; flex-wrap:wrap; gap:10px}
-.badge{padding:8px 12px; border:1px dashed rgba(255,255,255,.25); border-radius:10px}
-.note{color:var(--muted)}
-
-/* recognition logos (bigger) */
 .logo-badges{
   list-style:none; padding:0; margin:10px 0 0;
   display:flex; flex-wrap:wrap; gap:18px 28px; align-items:center;
 }
 .logo-badges li{ display:flex; align-items:center; }
 .logo-badges .logo{
-  height:56px;                 /* было 44px */
-  max-width:260px;
-  width:auto; display:block;
+  height:56px; max-width:260px; width:auto; display:block;
   filter:grayscale(100%) contrast(.92) brightness(.9);
   opacity:.9; transition:.2s ease;
 }
 .logo-badges a:hover .logo{
   filter:none; opacity:1; transform:translateY(-1px);
 }
-
-/* чуть уменьшить на узких экранах */
 @media (max-width:680px){
   .logo-badges{ gap:14px 18px }
   .logo-badges .logo{ height:44px; max-width:200px; }
 }
 
-
-
-/* contact – улучшенные контуры и фокус */
+/* =========== Forms & Contact =========== */
 .form .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 .form input, .form textarea{
   width:100%; padding:12px 14px; border-radius:12px;
   border:1px solid rgba(255,255,255,.28);
   background:rgba(255,255,255,.04);
   color:var(--text); font-size:16px;
+  font-family: inherit;
   transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
 }
-.form input::placeholder, .form textarea::placeholder{ color:rgba(231,238,249,.65) }
-.form input:hover, .form textarea:hover{ border-color:rgba(255,255,255,.4) }
 .form input:focus, .form textarea:focus{
   outline:none; border-color:#66a8ff; box-shadow:0 0 0 3px rgba(59,130,246,.35);
   background:rgba(255,255,255,.06);
 }
 .form textarea{resize:vertical; min-height:120px}
 .links{list-style:none; padding:0; margin:16px 0 0; display:flex; gap:10px; flex-wrap:wrap}
+
 .btn{
   display:inline-block; text-decoration:none; color:#fff;
   background:linear-gradient(90deg,var(--accent),var(--accent-2));
   padding:10px 18px; border-radius:12px; font-weight:800; box-shadow:var(--shadow);
-  transition:.18s ease;
+  transition:.18s ease; border: none; cursor: pointer;
+  font-size: 1rem;
 }
-.btn.ghost{color:var(--text); background:none; border:1px solid rgba(255,255,255,.25)}
+.btn.small { padding: 8px 16px; font-size: 0.9rem; }
+.btn.ghost{color:var(--text); background:none; border:1px solid rgba(255,255,255,.25); box-shadow: none;}
+.btn:hover { transform: translateY(-2px); filter: brightness(110%); }
 
 @media (prefers-color-scheme: light){
   .form input, .form textarea{ border:1px solid #c8d6f2; background:#fff; color:#0d1420 }
   .form input::placeholder, .form textarea::placeholder{ color:#6b7a95 }
-  .form input:hover, .form textarea:hover{ border-color:#a9bfe8 }
   .form input:focus, .form textarea:focus{
     border-color:#5a9fff; box-shadow:0 0 0 3px rgba(59,130,246,.25); background:#fff;
   }
+  .btn.ghost { border-color: rgba(0,0,0,0.2); color: var(--text); }
 }
 
 /* footer */
-.site-footer{border-top:1px solid rgba(255,255,255,.08); padding:22px 0; color:var(--muted)}
+.site-footer{border-top:1px solid rgba(255,255,255,.08); padding:22px 0; color:var(--muted); margin-top: auto;}
 .site-footer .container{display:flex; gap:10px; align-items:center; justify-content:center}
 .sep{opacity:.5}
 
@@ -237,23 +278,13 @@ p{line-height:1.7; color:#dfe7f6}
   .hero-text h1{font-size:40px}
   .cards{grid-template-columns:1fr}
   .nav{display:none; position:absolute; right:20px; top:60px; background:#0b111a;
-       border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:10px 14px; box-shadow:var(--shadow)}
-  .nav a{display:block; padding:8px 4px}
-  .nav.open{display:block}
+       border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:10px 14px; box-shadow:var(--shadow); flex-direction: column; align-items: flex-start;}
+  .nav a{display:block; padding:8px 12px; width: 100%;}
+  .nav.open{display:flex}
   .nav-toggle{display:block}
 }
 
-@media (prefers-reduced-motion: reduce){
-  *{animation:none!important; transition:none!important}
-}
-
-/* скрыть honeypot */
 .hp{ display:none !important; }
-
-/* статус отправки */
 .form-status{ margin-top:12px; font-weight:700; color:var(--muted) }
-.form-status.success{ color:#22d3ee }         /* бирюзовый — ОК */
-.form-status.error{ color:#ff6b6b }           /* красный — ошибка */
-
-/* кнопка при отправке */
-.btn[disabled]{ opacity:.7; cursor:wait; filter:saturate(90%) }
+.form-status.success{ color:#22d3ee }
+.form-status.error{ color:#ff6b6b }
