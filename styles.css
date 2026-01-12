@@ -30,13 +30,7 @@ body.light-theme .hero-cta.primary {
   color: #fff; /* Текст на кнопке остается белым */
 }
 
-/* Принудительная темная тема (для возврата назад) */
-body.dark-theme {
-  --bg:#0e131b; --bg-2:#0b111a;
-  --panel:#121a27; --text:#e7eef9; --muted:#9fb0c9;
-  --card:#101722; --ring:#2a3548;
-  --surface: rgba(255,255,255,.03);
-}
+
 
 *{box-sizing:border-box}
 html,body{height:100%}
