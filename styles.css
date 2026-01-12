@@ -30,7 +30,13 @@ body.light-theme .hero-cta.primary {
   color: #fff; /* Текст на кнопке остается белым */
 }
 
-
+/* Принудительная темная тема (для возврата назад) */
+body.dark-theme {
+  --bg:#0e131b; --bg-2:#0b111a;
+  --panel:#121a27; --text:#e7eef9; --muted:#9fb0c9;
+  --card:#101722; --ring:#2a3548;
+  --surface: rgba(255,255,255,.03);
+}
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -307,3 +313,21 @@ hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0; }
 .form-status{ margin-top:12px; font-weight:700; color:var(--muted) }
 .form-status.success{ color:#22d3ee }
 .form-status.error{ color:#ff6b6b }
+
+/* --- FIX: Шапка на внутренних страницах --- */
+/* На главной элементами управляет сама .site-header, а на внутренних — .container */
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Убедимся, что на главной это не сломает верстку (там нет container в header) */
+@media (max-width: 980px) {
+    /* На мобильных на внутренних страницах тоже нужен порядок */
+    .site-header .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
