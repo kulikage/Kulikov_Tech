@@ -8,8 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <header class="site-header">
-    <a class="brand" href="index.html">← Back to Portfolio</a>
+    <div class="container">
+      <a class="brand" href="index.html">← Back to Portfolio</a>
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">☾</button>
+    </div>
   </header>
 
   <section class="section">
@@ -17,7 +21,7 @@
       <h1>Custom FDM for Elastomer Mass Production</h1>
       <p class="lead">From garage prototype to 2,500+ units shipped globally.</p>
       
-      <div class="specs" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+      <div class="specs" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1);">
         <p><strong>Role:</strong> Lead Engineer & Founder</p>
         <p><strong>Tools:</strong> Marlin FW, C++, SolidWorks, MKS Eagle (32-bit), TMC2209</p>
       </div>
@@ -42,7 +46,7 @@
       <div class="chart-container" style="margin: 2rem 0;">
         <h4>Long-Term Impact Analysis</h4>
         <p class="small"><em>Data visualized using Python (Pandas/Matplotlib) based on sales logs & fleet mileage assumptions.</em></p>
-        <img src="assets/impact_chart.png" alt="Graph showing cumulative vehicle upgrades and CO2 savings" style="width: 100%; max-width: 800px; border-radius: 8px; border: 1px solid #333;">
+        <img src="assets/impact_chart.png" alt="Graph showing cumulative vehicle upgrades and CO2 savings">
       </div>
 
       <p><strong>Environment:</strong> The product restores airtight intake systems, proven to reduce fuel consumption by ~15% and cut CO2 emissions (approx. 770 tons annually across the fleet).</p>
@@ -52,5 +56,13 @@
       </div>
     </div>
   </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="y"></span> Nikolai Kulikov</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
