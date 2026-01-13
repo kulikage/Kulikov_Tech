@@ -8,8 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header class="site-header">
-    <a class="brand" href="index.html">← Back to Portfolio</a>
+    <div class="container">
+      <a class="brand" href="index.html">← Back to Portfolio</a>
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">☾</button>
+    </div>
   </header>
 
   <section class="section">
@@ -17,7 +21,7 @@
       <h1>TorrideX: Plasma Energy Harvesting</h1>
       <p class="lead">Direct conversion of plasma energy without thermal cycles.</p>
 
-      <div class="specs" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+      <div class="specs" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1);">
         <p><strong>Role:</strong> Inventor / R&D Scientist</p>
         <p><strong>Tools:</strong> HV Induction Source, Oscilloscope, Neodymium Magnets</p>
       </div>
@@ -44,5 +48,13 @@
       </div>
     </div>
   </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="y"></span> Nikolai Kulikov</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
