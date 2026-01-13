@@ -331,3 +331,38 @@ hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0; }
         padding-right: 20px;
     }
 }
+
+/* --- Project Gallery (Сетка изображений) --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto; /* Или height: 250px; object-fit: cover; для одинаковой высоты */
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--surface);
+  transition: transform 0.2s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+}
+
+.gallery-caption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  font-family: monospace; /* Инженерный стиль подписей */
+}
