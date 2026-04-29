@@ -366,3 +366,71 @@ hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0; }
   text-align: center;
   font-family: monospace; /* Инженерный стиль подписей */
 }
+
+/* ===============================
+   NVIDIA / Case Study Fixes
+   =============================== */
+
+/* Fix readability when light theme is enabled by script */
+body.light-theme p,
+body.light-theme li,
+body.light-theme .lead,
+body.light-theme .small,
+body.light-theme .facts li,
+body.light-theme .specs p {
+  color: #233047;
+  opacity: 1;
+}
+
+/* Keep secondary/meta text readable but softer */
+body.light-theme .muted,
+body.light-theme .note,
+body.light-theme .site-footer,
+body.light-theme .site-footer p {
+  color: #4b5b73;
+  opacity: 1;
+}
+
+/* Improve case-study readability specifically */
+body.case-page p,
+body.case-page li,
+body.case-page .lead,
+body.case-page .specs p {
+  color: var(--text);
+  opacity: 0.95;
+}
+
+body.light-theme.case-page p,
+body.light-theme.case-page li,
+body.light-theme.case-page .lead,
+body.light-theme.case-page .specs p {
+  color: #233047;
+  opacity: 1;
+}
+
+/* Make NVIDIA Inception badge stay official full-color */
+.logo-badges img.nvidia-logo-badge {
+  filter: none !important;
+  opacity: 1 !important;
+  max-height: 54px;
+  width: auto;
+}
+
+/* Footer legal text should wrap cleanly */
+.site-footer .container {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.site-footer .legal-note {
+  flex: 1 1 320px;
+  max-width: 720px;
+  line-height: 1.55;
+}
+
+/* Mobile fix for two-column specs blocks on case pages */
+@media (max-width: 760px) {
+  .specs {
+    grid-template-columns: 1fr !important;
+  }
+}
