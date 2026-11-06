@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TorrideX: plasma-assisted thermionic conversion — Nikolai Kulikov</title>
+  <meta name="description" content="TorrideX, the R&amp;D program of Kulicage Dynamics: plasma-assisted thermionic conversion of heat into electricity. Nikolai Kulikov&#39;s role as founder and program lead.">
+  <link rel="canonical" href="https://kulikov.tech/case-torridex.html">
+  <meta name="theme-color" content="#f6f8fb">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nikolai Kulikov">
+  <meta property="og:url" content="https://kulikov.tech/case-torridex.html">
+  <meta property="og:title" content="TorrideX: plasma-assisted thermionic conversion">
+  <meta property="og:description" content="Simulation-first energy-conversion R&amp;D at Kulicage Dynamics. Case study by Nikolai Kulikov.">
+  <meta property="og:image" content="https://kulikov.tech/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <script>try{if(localStorage.getItem('kt-theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="assets/logo.svg" alt="" width="30" height="30">
+        <span>Nikolai Kulikov</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <a href="/#about">About</a>
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <a class="back-link" href="/#work">All case studies</a>
+        <h1>TorrideX: plasma-assisted thermionic conversion</h1>
+        <p class="lead">TorrideX is the R&amp;D program of Kulicage Dynamics, the company I founded in 2024. It investigates turning heat directly into DC electricity, with no moving parts, for compact long-duration power.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Founder, program lead</dd></div>
+          <div><dt>Stage</dt><dd>Modeling and numerical verification</dd></div>
+          <div><dt>Tools</dt><dd>COMSOL, Python, NVIDIA Warp, SolidWorks, Inventor</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container prose">
+        <h2>How it works</h2>
+        <p>A heated emitter releases electrons that cross a narrow gap to a cooler collector, producing DC power directly from heat. A low-pressure plasma in the gap supports electron transport by neutralizing space charge, the effect that otherwise limits current.</p>
+
+        <h2>What I do on the program</h2>
+        <ul>
+          <li>Build thermal, electrostatic and particle-transport models and test where their assumptions stop holding.</li>
+          <li>Verify numerical results against analytical reference solutions, with grid-convergence and conservation checks.</li>
+          <li>Cross-check CPU and GPU implementations, including an NVIDIA Warp benchmark.</li>
+          <li>Turn verified models into the mechanical and thermal design of prototype hardware.</li>
+        </ul>
+
+        <h2>Where it stands</h2>
+        <p>The program is in modeling and numerical verification. The next milestone is a controlled, electrically heated, non-radioactive bench experiment.</p>
+        <p>Geometry, materials and design details are shared under NDA or in formal partner discussions.</p>
+
+        <div class="callout">
+          <div class="badge-plate"><img src="assets/nvidia-inception-badge.png" alt="NVIDIA Inception program badge" width="501" height="217"></div>
+          <div>
+            <p><strong>Kulicage Dynamics LLC / TorrideX is a member of the NVIDIA Inception program.</strong></p>
+            <p>Membership supports the simulation-first workflow, including GPU-accelerated modeling.</p>
+          </div>
+        </div>
+
+        <div class="case-cta">
+          <a class="btn btn-primary" href="https://kdyn.tech/#program">Program page on kdyn.tech</a>
+          <a class="btn btn-secondary" href="https://kdyn.tech/#contact">Partner inquiries</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="container case-nav" aria-labelledby="more-title">
+      <h2 id="more-title">More case studies</h2>
+      <ul>
+        <li><a href="case-fdm.html">Production TPU seals on a modified FDM printer<span>Own product, ≈3,000 kits sold</span></a></li>
+        <li><a href="case-heavy.html">Offshore and hazardous-environment machinery<span>Prior engineering experience, 2014–2021</span></a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <span>© <span id="y">2026</span> Nikolai Kulikov</span>
+        <span>Founder, Kulicage Dynamics: <a href="https://kdyn.tech/">kdyn.tech</a></span>
+      </div>
+      <p class="legal-note">References to NVIDIA Inception identify program membership only and do not imply endorsement, funding, validation, or partnership by NVIDIA.</p>
+      <p class="legal-note">NVIDIA, the NVIDIA logo, and NVIDIA Inception are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries. All other trademarks are the property of their respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offshore and hazardous-environment machinery — Nikolai Kulikov</title>
+  <meta name="description" content="Case study: a motion-compensated offshore gangway and a remote-controlled robot for high-radiation zones. Mechanical design by Nikolai Kulikov.">
+  <link rel="canonical" href="https://kulikov.tech/case-heavy.html">
+  <meta name="theme-color" content="#f6f8fb">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nikolai Kulikov">
+  <meta property="og:url" content="https://kulikov.tech/case-heavy.html">
+  <meta property="og:title" content="Offshore and hazardous-environment machinery">
+  <meta property="og:description" content="Hydraulic hexapod kinematics and radiation shielding layouts from prior engineering experience. Case study by Nikolai Kulikov.">
+  <meta property="og:image" content="https://kulikov.tech/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <script>try{if(localStorage.getItem('kt-theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="assets/logo.svg" alt="" width="30" height="30">
+        <span>Nikolai Kulikov</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <a href="/#about">About</a>
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <a class="back-link" href="/#work">All case studies</a>
+        <h1>Offshore and hazardous-environment machinery</h1>
+        <p class="lead">Heavy machinery, hydraulic actuation and remotely operated systems for work at sea and in high-radiation zones, from my prior engineering experience as a lead design engineer.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Lead design engineer</dd></div>
+          <div><dt>Period</dt><dd>2014–2021</dd></div>
+          <div><dt>Tools</dt><dd>SolidWorks, KOMPAS-3D, kinematic analysis</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container prose">
+        <h2>Motion-compensated offshore gangway</h2>
+        <p><strong>Context.</strong> A gangway that transfers personnel between vessels and offshore oil platforms in rough seas, similar in purpose to systems such as Ampelmann.</p>
+        <p><strong>Contribution.</strong> Led the 3D modeling of the hydraulic hexapod platform and developed the control-logic flowchart for active wave compensation.</p>
+        <p><strong>Outcome.</strong> Completed the initial prototype design and its kinematic verification.</p>
+
+        <figure class="figure">
+          <div class="figure-graph">
+              <svg class="schematic" viewBox="0 0 345 150" role="img" aria-labelledby="hex-title">
+                <title id="hex-title">Generic schematic of a motion-compensated gangway on a hydraulic hexapod, reaching from a vessel to an offshore platform</title>
+                <text x="14" y="20" class="sub">Generic schematic, not to scale</text>
+                <polyline class="mut" points="14,136.0 18,138.2 22,139.0 26,137.8 30,135.4 34,133.4 38,133.1 42,134.8 46,137.2 50,138.9 54,138.6 58,136.6 62,134.2 66,133.0 70,133.8 74,136.0 78,138.2 82,139.0 86,137.8 90,135.4 94,133.4 98,133.1 102,134.8 106,137.2 110,138.9 114,138.6 118,136.6 122,134.2 126,133.0 130,133.8 134,136.0 138,138.2 142,139.0 146,137.8 150,135.4 154,133.4 158,133.1 162,134.8 166,137.2 170,138.9 174,138.6 178,136.6 182,134.2 186,133.0 190,133.8 194,136.0 198,138.2 202,139.0 206,137.8 210,135.4 214,133.4 218,133.1 222,134.8 226,137.2 230,138.9 234,138.6 238,136.6 242,134.2 246,133.0 250,133.8 254,136.0 258,138.2 262,139.0 266,137.8 270,135.4 274,133.4 278,133.1 282,134.8 286,137.2 290,138.9 294,138.6 298,136.6 302,134.2 306,133.0 310,133.8" fill="none" stroke-width="1.5"/>
+                <path class="ink fill" d="M70 117 H270 L258 132 H82 Z" stroke-width="1.6" stroke-linejoin="round"/>
+                <line class="acc" x1="108" y1="117" x2="131.5" y2="88.4" stroke-width="6" stroke-linecap="round"/><line class="ink" x1="131.5" y1="88.4" x2="150" y2="66" stroke-width="2.2" stroke-linecap="round"/><line class="acc" x1="136" y1="117" x2="133.8" y2="88.4" stroke-width="6" stroke-linecap="round"/><line class="ink" x1="133.8" y1="88.4" x2="132" y2="66" stroke-width="2.2" stroke-linecap="round"/><line class="acc" x1="156" y1="117" x2="168.3" y2="88.4" stroke-width="6" stroke-linecap="round"/><line class="ink" x1="168.3" y1="88.4" x2="178" y2="66" stroke-width="2.2" stroke-linecap="round"/><line class="acc" x1="184" y1="117" x2="171.7" y2="88.4" stroke-width="6" stroke-linecap="round"/><line class="ink" x1="171.7" y1="88.4" x2="162" y2="66" stroke-width="2.2" stroke-linecap="round"/><line class="acc" x1="204" y1="117" x2="206.2" y2="88.4" stroke-width="6" stroke-linecap="round"/><line class="ink" x1="206.2" y1="88.4" x2="208" y2="66" stroke-width="2.2" stroke-linecap="round"/><line class="acc" x1="232" y1="117" x2="208.5" y2="88.4" stroke-width="6" stroke-linecap="round"/><line class="ink" x1="208.5" y1="88.4" x2="190" y2="66" stroke-width="2.2" stroke-linecap="round"/>
+                <rect class="ink fill" x="124" y="60" width="92" height="7" rx="2" stroke-width="1.6"/>
+                <rect class="ink fill" x="158" y="50" width="24" height="10" rx="2" stroke-width="1.6"/>
+                <path class="ink fill" d="M176 50 L322 43 L322 49 L176 57 Z" stroke-width="1.6" stroke-linejoin="round"/>
+                <path class="mut" d="M186 44 L318 37.6" fill="none" stroke-width="1.4"/>
+                <path class="mut" d="M200 43.3 V50 M230 41.9 V48.6 M260 40.4 V47.1 M290 39 V45.6" fill="none" stroke-width="1.2"/>
+                <path class="ink" d="M316 47 H343 M324 47 V142 M338 47 V142 M324 70 L338 95 M338 70 L324 95" fill="none" stroke-width="2"/>
+              </svg>
+          </div>
+          <figcaption>How a motion-compensated gangway works: a hydraulic hexapod on the vessel keeps the gangway steady while the deck moves. A generic illustration, not the project design.</figcaption>
+        </figure>
+
+        <h2>Remote-controlled robot for high-radiation zones</h2>
+        <p><strong>Context.</strong> A robotic platform for operations where radiation would damage unprotected electronics.</p>
+        <p><strong>Contribution.</strong> Designed the internal component layout and calculated the lead and composite shielding thicknesses needed to protect sensitive electronics without exceeding the weight limit.</p>
+        <p><strong>Outcome.</strong> Delivered subsystem layouts for the master assembly.</p>
+
+
+        <div class="case-cta">
+          <a class="btn btn-primary" href="/#contact">Discuss a project</a>
+          <a class="btn btn-secondary" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="container case-nav" aria-labelledby="more-title">
+      <h2 id="more-title">More case studies</h2>
+      <ul>
+        <li><a href="case-fdm.html">Production TPU seals on a modified FDM printer<span>Own product, ≈3,000 kits sold</span></a></li>
+        <li><a href="case-torridex.html">TorrideX energy conversion<span>Kulicage Dynamics R&amp;D program</span></a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <span>© <span id="y">2026</span> Nikolai Kulikov</span>
+        <span>Founder, Kulicage Dynamics: <a href="https://kdyn.tech/">kdyn.tech</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

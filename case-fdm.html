@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Production TPU seals on a modified FDM printer — Nikolai Kulikov</title>
+  <meta name="description" content="Case study: intercooler seals for diesel engines in soft TPU, made on a rebuilt FDM printer. About 3,000 kits sold and 15,000+ components made.">
+  <link rel="canonical" href="https://kulikov.tech/case-fdm.html">
+  <meta name="theme-color" content="#f6f8fb">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nikolai Kulikov">
+  <meta property="og:url" content="https://kulikov.tech/case-fdm.html">
+  <meta property="og:title" content="Production TPU seals on a modified FDM printer">
+  <meta property="og:description" content="From a rebuilt desktop printer to ≈3,000 kits sold. Case study by Nikolai Kulikov.">
+  <meta property="og:image" content="https://kulikov.tech/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <script>try{if(localStorage.getItem('kt-theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="assets/logo.svg" alt="" width="30" height="30">
+        <span>Nikolai Kulikov</span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main">
+        <a href="/#about">About</a>
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <a class="back-link" href="/#work">All case studies</a>
+        <h1>Production TPU seals on a modified FDM printer</h1>
+        <p class="lead">I designed intercooler seals for diesel engines, then rebuilt a desktop printer so it could make them in soft TPU at production volume.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Founder and lead engineer</dd></div>
+          <div><dt>Scope</dt><dd>Design, production, sales</dd></div>
+          <div><dt>Tools</dt><dd>SolidWorks, Marlin firmware (C++), MKS Eagle 32-bit, TMC2209</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container prose">
+        <h2>The problem</h2>
+        <p>A leak at an intercooler connection lets boost pressure escape, which costs a turbo-diesel power and fuel economy. The seal I designed had to be soft enough to close that gap, so it is printed in TPU of Shore 65A hardness.</p>
+        <p>Standard FDM printers cannot feed filament that soft at production speed: it buckles between the drive gear and the nozzle and jams the extruder.</p>
+
+        <h2>The engineering solution</h2>
+        <p>Instead of buying industrial printers, I rebuilt a desktop machine for flexible filament:</p>
+        <ul>
+          <li><strong>Hardware.</strong> Retrofitted an Anet A8 Plus frame with a direct-drive extruder path designed for flexible filament. Replaced the mainboard with an MKS Eagle (32-bit) and TMC2209 drivers for precise micro-stepping and quieter operation.</li>
+          <li><strong>Firmware.</strong> Modified the Marlin source: tuned thermal runaway protection, recalibrated stepper current (Vref) to balance torque against heat, and tuned linear advance for elastomer flow.</li>
+        </ul>
+        <p>The rebuilt printer then ran production around the clock with a near-zero failure rate.</p>
+
+        <h2>Results</h2>
+        <div class="stat-row">
+          <div class="stat"><strong>≈3,000</strong><span>seal kits sold</span></div>
+          <div class="stat"><strong>15,000+</strong><span>components made</span></div>
+          <div class="stat"><strong>End to end</strong><span>from design to sales</span></div>
+        </div>
+        <p class="muted">Figures as of November 2026.</p>
+
+        <figure class="figure">
+          <img src="assets/impact_chart.png" alt="Chart of upgraded vehicles growing from about 30 in early 2020 to 2,748 in July 2026, with a dashed line for the cumulative CO2 estimate reaching about 3,420 tons" width="1189" height="690" loading="lazy">
+          <figcaption>Upgraded vehicles through July 2026, with a scenario estimate of CO₂ avoided. The estimate assumes 15,000 km per vehicle per year, 6.4 L/100 km and a 15% fuel saving, at 2.68 kg CO₂ per liter. The 15% figure comes from customer reports, not a controlled test; the CO₂ and tree figures are cumulative estimates, not measurements.</figcaption>
+        </figure>
+        <p>Restoring an airtight intake path brings the engine back to its designed boost pressure, which supports the fuel economy it was built for.</p>
+
+        <div class="case-cta">
+          <a class="btn btn-primary" href="/#contact">Discuss a project</a>
+          <a class="btn btn-secondary" href="assets/Nikolai_Kulikov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="container case-nav" aria-labelledby="more-title">
+      <h2 id="more-title">More case studies</h2>
+      <ul>
+        <li><a href="case-torridex.html">TorrideX energy conversion<span>Kulicage Dynamics R&amp;D program</span></a></li>
+        <li><a href="case-heavy.html">Offshore and hazardous-environment machinery<span>Prior engineering experience, 2014–2021</span></a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <span>© <span id="y">2026</span> Nikolai Kulikov</span>
+        <span>Founder, Kulicage Dynamics: <a href="https://kdyn.tech/">kdyn.tech</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
